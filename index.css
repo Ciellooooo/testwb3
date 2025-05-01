@@ -1,0 +1,338 @@
+.jumbotron {
+    background-image: url('assets/Timor-Leste-Landscape-LR.jpg');
+    background-size: cover;           /* Gambar penuh area */
+    background-position: center center; /* Tengah pas */
+    background-repeat: no-repeat;
+    min-height: 100vh;                /* Full layar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .jumbotron::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.1); /* Overlay putih semi transparan */
+    z-index: 1;
+  }
+  
+  /* Isi Jumbotron */
+  #jumbotron {
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    max-width: 4000px;
+    top: -10px;
+    object-fit: contain; /* Gambar muat penuh */
+  }
+  
+  .jumbotron-title {
+    font-size: 3vw;
+    color: #ffffff;
+    margin-bottom: 20px;
+    z-index: 2;
+    font-family: 'Segoe UI', 'Poppins', sans-serif;
+    font-weight: 700;
+  }
+  
+  .jumbotron-text {
+    font-size: 1.2rem;
+    color: #ffffff;
+    font-family: 'Segoe UI', 'Poppins', sans-serif;
+    text-shadow:
+      -1px -1px 0 #c0c0c0,
+       1px -1px 0 #c0c0c0,
+      -1px  1px 0 #c0c0c0,
+       1px  1px 0 #c0c0c0,
+       2px  2px 5px #000000;
+    text-align: left;
+    margin-bottom: 30px;
+    border-bottom: 5px solid #1e3a8a;
+    padding-bottom: 15px;
+    z-index: 2;
+  }
+  
+  
+  .mini-text-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    z-index: 2;
+  }
+  
+  .mini-text {
+    color: #ffffff;
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 0.95rem;
+  }
+  
+  /* Gambar di jumbotron disembunyiin */
+  .jumbotron-img,
+  .jumbotron img {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .jumbotron {
+      background-image: none;
+      background: linear-gradient(to right, #dff5ff, #8fc9ff);
+
+      /* Gradien biru muda */
+      padding: 30px 15px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .jumbotron::after {
+      background-color: transparent; /* Hapus overlay di HP */
+    }
+  
+    .jumbotron-title {
+      font-size: 7vw;
+      text-align: center;
+      line-height: 1.2;
+      color: #003366; /* Warna lebih gelap biar kontras di background terang */
+    }
+  
+    .jumbotron-text {
+      font-size: 0.95rem;
+      text-align: center;
+      padding: 10px 5px;
+      line-height: 1.6;
+      border-bottom: 3px solid #1e3a8a;
+      color: #004080;
+      text-shadow: none;
+    }
+  
+    .mini-text {
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 10px;
+      color: #003366;
+    }
+  
+    .jumbotron-img {
+      display: none !important; /* Sembunyikan gambar */
+    }
+  
+    .header-flex {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  /* === GLOBAL STYLES === */
+body {
+  background: linear-gradient(to bottom right, #f0f8ff, #e4f0ff);
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+}
+
+/* === CONTAINER === */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === CARD === */
+.card {
+  background: linear-gradient(to right, #e6f4ff, #ffffff);
+  border: 2px solid #cce5ff;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* === HEADER ICON + TITLE === */
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  font-size: 2rem;
+  margin-right: 0.75rem;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* === TEXT === */
+.card p {
+  color: #4b5563;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* === BUTTONS === */
+.button {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  border-radius: 0.5rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.print-btn {
+  background-color: #2563eb;
+}
+.print-btn:hover {
+  background-color: #1e40af;
+}
+
+.cafe-btn {
+  background-color: #92400e;
+}
+.cafe-btn:hover {
+  background-color: #78350f;
+}
+
+.alu-btn {
+  background-color: #0f172a;
+}
+.alu-btn:hover {
+  background-color: #374151;
+}
+
+/* === CLICKABLE TEXT === */
+.clickable-text {
+  color: #d1d5db;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 0.25rem;
+}
+.clickable-text:hover {
+  color: #6b7280;
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+}
+
+/* === ANIMATION === */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .card h2 {
+    font-size: 1.25rem;
+  }
+
+  .card p {
+    font-size: 1rem;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+}
+
+
+ 
+  
+  
+  
+
+  #showcase {
+    margin: 50px 0;
+  }
+  
+  .slider {
+    position: relative;
+    overflow: hidden;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .slide {
+    display: none;
+    text-align: center;
+  }
+  
+  .slide.active {
+    display: block;
+  }
+  
+  .showcase-img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+  
+  .prev, .next {
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  
+  

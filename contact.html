@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Print & Eat</title>
+
+  <link rel="stylesheet" href="header.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  
+}
+
+
+
+    /* Contact Section */
+    .contact-wrapper {
+      max-width: 1200px;
+      margin: 60px auto 40px;
+      padding: 20px;
+    }
+
+    .contact-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .contact-header h1 {
+      font-size: 32px;
+      color: #0066cc;
+    }
+
+    .contact-header p {
+      font-size: 18px;
+      color: #444;
+      margin-top: 10px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .contact-card {
+      background: linear-gradient(to right, #e6f4ff, #ffffff);
+      border: 2px solid #cce5ff;
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    .contact-card h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #003d99;
+    }
+
+    .contact-card p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background-color: #0072ff;
+      color: #fff;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #005ed6;
+    }
+
+    .info-bottom {
+      text-align: center;
+      margin: 30px 20px;
+      font-size: 16px;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .contact-header h1 {
+        font-size: 26px;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .btn-group {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">
+      <a href="index.html" class="header-logo">Digital Printing | Aluminium | Cafe</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Services</a>
+        <div class="dropdown-content">
+          <a href="print.html">Printing</a>
+          <a href="cafe.html">Cafe</a>
+          <a href="alu.html">Aluminium</a>
+        </div>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="Maps.html">Map</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="contact-wrapper">
+  <div class="contact-header">
+    <h1>Contact Our Teams</h1>
+    <p>We are ready to assist you. Reach us via WhatsApp below.</p>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h2>Restaurant – Peso Kitchen</h2>
+      <p>+670 7380 8481</p>
+      <a href="https://wa.me/67073808481" target="_blank" class="btn">Chat on WhatsApp</a>
+    </div>
+
+    <div class="contact-card">
+      <h2>Printing – Sales & Marketing</h2>
+      <p>Mr. Edo: +670 7475 1071<br>Mr. Ronny: +670 7372 7373</p>
+      <div class="btn-group">
+        <a href="https://wa.me/67074751071" target="_blank" class="btn">Contact Mr.Edo</a>
+        <a href="https://wa.me/67073727373" target="_blank" class="btn">Contact Mr.Ronny</a>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <h2>Aluminium – Sales & Marketing</h2>
+      <p>Mr. Rio: +670 7394 9039<br>Mr. Ronny: +670 7372 7373</p>
+      <div class="btn-group">
+        <a href="https://wa.me/67073949039" target="_blank" class="btn">Contact Mr.Rio</a>
+        <a href="https://wa.me/67073727373" target="_blank" class="btn">Contact Mr.Ronny</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="info-bottom">
+  <p><strong>Note:</strong> We only accept orders via WhatsApp.</p>
+</div>
+
+<script>
+  // Simple scroll animation
+  const cards = document.querySelectorAll('.contact-card');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  cards.forEach(card => {
+    observer.observe(card);
+  });
+</script>
+
+</body>
+</html>

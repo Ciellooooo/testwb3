@@ -1,0 +1,199 @@
+/* ===== RESET DAN FONTS ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* ===== HEADER ===== */
+header {
+  background-color: #0066cc;
+  padding: 16px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+/* LOGO */
+nav .logo a {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+nav .logo a:hover {
+  color: #ffcc00;
+}
+
+/* NAV LINKS */
+ul.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+ul.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+ul.nav-links li a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffcc00;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown {
+  position: relative;
+}
+.dropbtn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+.dropbtn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffcc00;
+}
+
+.dropdown-content {
+  display: block;
+  position: absolute;
+  background-color: #005bb8;
+  top: 100%;
+  left: 0;
+  min-width: 160px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dropdown links */
+.dropdown-content a {
+  display: block;
+  padding: 10px 16px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+/* Animate each link one by one */
+.dropdown:hover .dropdown-content a:nth-child(1) {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.1s;
+}
+.dropdown:hover .dropdown-content a:nth-child(2) {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.2s;
+}
+.dropdown:hover .dropdown-content a:nth-child(3) {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #004999;
+}
+
+/* HOVER WARNA BERDASARKAN KATEGORI */
+.dropdown-content a[href="print.html"]:hover {
+  color: #66b2ff;
+}
+.dropdown-content a[href="cafe.html"]:hover {
+  color: #ffcc00;
+}
+.dropdown-content a[href="alu.html"]:hover {
+  color: #cccccc;
+}
+
+/* ===== RESPONSIVE - MOBILE ===== */
+@media (max-width: 768px) {
+
+  header {
+    position: static; /* atau position: relative juga boleh */
+    box-shadow: none; /* opsional: hilangkan bayangan jika ingin lebih ringan */
+  }
+  
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ul.nav-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px;
+    width: 100%;
+  }
+
+  ul.nav-links li {
+    padding: 0;
+  }
+
+  ul.nav-links li a,
+  .dropbtn {
+    font-size: 14px;
+    padding: 8px 10px;
+    width: auto;
+    text-align: center;
+  }
+
+  .dropdown-content {
+    right: 0;
+    left: auto;
+    top: 100%;
+    background-color: #005bb8;
+    min-width: 160px;
+    border-radius: 6px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+}
